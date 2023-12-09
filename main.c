@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "lib/manage.h"
 
 int main(){
-
-  printf("hello world!\n");
+    system("clear");
+    design();
   
   return 0;
 }
