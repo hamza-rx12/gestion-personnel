@@ -7,7 +7,7 @@
 
 
 void design(){
-    printf("\n"
+    printf(CYAN"\n"
            "\n"
            "                    ███████╗███╗   ██╗███████╗ █████╗ ██╗  ██╗                              \n"
            "                    ██╔════╝████╗  ██║██╔════╝██╔══██╗██║  ██║                              \n"
@@ -29,7 +29,9 @@ void design(){
            "██║╚██╔╝██║██╔══██║██║╚██╗██║██╔══██║██║   ██║██╔══╝  ██║╚██╔╝██║██╔══╝  ██║╚██╗██║   ██║   \n"
            "██║ ╚═╝ ██║██║  ██║██║ ╚████║██║  ██║╚██████╔╝███████╗██║ ╚═╝ ██║███████╗██║ ╚████║   ██║   \n"
            "╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═══╝   ╚═╝   \n"
+           RESET
            "");
+    printf("                                                                                  @HAMZA\n");
 
 }
 
@@ -47,10 +49,15 @@ char *prompt(){
         login l;
         printf("ID = ");
         scanf("%d",&l.ID);
+        getchar();
         strcpy(l.passHash,passHasher(getpass("Password = ")));
-        return NULL;
-
-
+        if(loginChecker(l)){
+            printf("your poste = %s\n", IDtoJob(l.ID));
+            return IDtoJob(l.ID);
+        }else{
+            printf("ID or Password wrong!\nQuiting...\n");
+            return NULL;
+        }
     }else if (choice==2) exit(EXIT_SUCCESS);
 
 }
