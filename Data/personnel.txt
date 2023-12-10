@@ -1,1 +1,5 @@
-235 hamza hamzaa email 1000 professor
+235 hamza hamzaa gmail@gmail.com 1000 professor
+100 kami kaze mail 1000 student_affairs
+123 rubi kubi koooooooo 546 administration
+0 rand random hello 700 service_maintainer
+1234 rubia kubi koooooooo 546 service_maintainer

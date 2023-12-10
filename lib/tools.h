@@ -36,7 +36,7 @@ int loginChecker(login l){
 
 char *IDtoJob(int ID){
     personnel p;
-    FILE *fp=fopen("./Data/personnel.txt","rb");
+    FILE *fp=fopen("./Data/personnel.txt","r");
     if(fp==NULL){
         perror("Error opening personnel.txt");
         exit(EXIT_FAILURE);
