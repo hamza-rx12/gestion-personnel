@@ -13,7 +13,7 @@ int loginChecker(login l){
     login lg;
     FILE *fp=fopen("./Data/passwords.bin","rb");
     if(fp==NULL){
-        perror("Error opening passwords.bin");
+        perror("Error opening passwords.bin!");
         exit(EXIT_FAILURE);
     }
     while(fread(&lg,sizeof(login),1,fp)==1){
@@ -21,9 +21,14 @@ int loginChecker(login l){
             if(!strcmp(lg.passHash,l.passHash)) {
                 fclose(fp);
                 return 1;
+            }else{
+                printf("Wrong password!\n");
+                fclose(fp);
+                return 0;
             }
         }
     }
+    printf("ID not found in data base!\n");
     fclose(fp);
     return 0;
 

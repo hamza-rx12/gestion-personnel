@@ -39,7 +39,7 @@ char *prompt(){
     int choice=0;
     printf("1.Login.\n"
            "2.Quit.\n"
-           "Enter your choice(1 or2): ");
+           GREEN"Enter your choice(1 or2): "RESET);
     scanf("%d",&choice);
     while(choice!=1 && choice != 2){
         printf("Enter a valid choice(1 or2): ");
@@ -55,7 +55,7 @@ char *prompt(){
             printf("your poste = %s\n", IDtoJob(l.ID));
             return IDtoJob(l.ID);
         }else{
-            printf("ID or Password wrong!\nQuiting...\n");
+            printf("Quiting...\n");
             return NULL;
         }
     }else if (choice==2) exit(EXIT_SUCCESS);
