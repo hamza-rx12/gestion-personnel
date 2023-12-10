@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "lib/variables.h"
+#include <string.h>
+#include <unistd.h>
+#include "variables.h"
+#include "tools.h"
 
 
 void design(){
@@ -27,5 +30,27 @@ void design(){
            "██║ ╚═╝ ██║██║  ██║██║ ╚████║██║  ██║╚██████╔╝███████╗██║ ╚═╝ ██║███████╗██║ ╚████║   ██║   \n"
            "╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═══╝   ╚═╝   \n"
            "");
+
+}
+
+char *prompt(){
+    int choice=0;
+    printf("1.Login.\n"
+           "2.Quit.\n"
+           "Enter your choice(1 or2): ");
+    scanf("%d",&choice);
+    while(choice!=1 && choice != 2){
+        printf("Enter a valid choice(1 or2): ");
+        scanf("%d",&choice);
+    }
+    if(choice==1){
+        login l;
+        printf("ID = ");
+        scanf("%d",&l.ID);
+        strcpy(l.passHash,passHasher(getpass("Password = ")));
+        return NULL;
+
+
+    }else if (choice==2) exit(EXIT_SUCCESS);
 
 }

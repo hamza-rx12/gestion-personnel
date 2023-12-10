@@ -7,7 +7,7 @@ typedef struct{
     char surname[30];
     char email[50];
     char salary[20];
-    char job[]
+    char job[20];
 }personnel;
 
 typedef struct {
