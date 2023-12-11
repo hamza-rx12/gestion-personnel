@@ -1,7 +1,10 @@
+#ifndef LIST
+#define LIST
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "variables.h"
+#include "tools.h"
 
 void list_all();
 void list_specific(int ID);
@@ -9,6 +12,7 @@ void list_service_maintainer();
 void list_administration();
 void list_professor();
 void list_student_affairs();
+void list_passwords();
 
 
 
@@ -159,5 +163,13 @@ void list_student_affairs(){
 
 }
 
+void list_passwords(){
+    login l;
+    FILE *fp=fopen("./Data/passwords.bin","rb");
+    while(fread(&l,sizeof(login),1,fp)==1)
+        printf("%d\t%s\n",l.ID,l.passHash);
+    fclose(fp);
+}
 
+#endif // LIST
 

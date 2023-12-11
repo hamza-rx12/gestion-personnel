@@ -1,3 +1,6 @@
+#ifndef ADD
+#define ADD
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -5,8 +8,12 @@
 
 void add_personnel(){
     personnel p;
+    login l;
     int choice;
+    char p1[30], p2[30];
     p.ID=generate_ID();
+    l.ID=p.ID;
+    printf(GREEN"Fill in the new personnel data:\n"RESET);
     printf("NAME = ");
     scanf("%s",p.name);
     printf("SURNAME = ");
@@ -15,7 +22,7 @@ void add_personnel(){
     scanf("%s",p.email);
     printf("SALARY = ");
     scanf("%d",&p.salary);
-    printf("All good,now choose a job from the list:\n"
+    printf(GREEN"All good,now choose a job from the list:\n"RESET
            "\t1.Professor.\n"
            "\t2.Student Affairs.\n"
            "\t3.Administration.\n"
@@ -40,23 +47,10 @@ void add_personnel(){
             strcpy(p.job,"service_maintainer");
             break;
     }
-
-    // write to personnel.txt
-    FILE *fp=fopen("./Data/personnel.txt","a");
-    if(fp==NULL){
-        perror("Error opening personnel.txt");
-        exit(EXIT_FAILURE);
-    }
-    fprintf(fp,"%d %s %s %s %d %s",p.ID,p.name,p.surname,p.email,p.salary,p.job);
-    fclose(fp);
-
-    // demanding password and writing to passwords.bin
-    login l;
-    l.ID=p.ID;
-    char p1[30], p2[30];
+    getchar();
     printf("Now choose a password for the new account:\n");
     while(1){
-        strcpy(p1,getpass("Input new password = "));
+        strcpy(p1,getpass("Input password = "));
         strcpy(p2,getpass("Confirm password = "));
         if (!strcmp(p1,p2)) {
             printf("Password confirmed!\n");
@@ -66,7 +60,18 @@ void add_personnel(){
             sleep(1);
         }
     }
-    strcpy(l.passHash,p1);
+
+    // write to personnel.txt
+    FILE *fp=fopen("./Data/personnel.txt","a");
+    if(fp==NULL){
+        perror("Error opening personnel.txt");
+        exit(EXIT_FAILURE);
+    }
+    fprintf(fp,"\n%d %s %s %s %d %s",p.ID,p.name,p.surname,p.email,p.salary,p.job);
+    fclose(fp);
+
+    // writing to passwords.bin
+    strcpy(l.passHash, passHasher(p1));
     FILE *f=fopen("./Data/passwords.bin","ab");
     if(f==NULL){
         perror("Error opening passwords.bin");
@@ -74,7 +79,9 @@ void add_personnel(){
     }
     fwrite(&l, sizeof(login),1,f);
     fclose(f);
+    printf("Added successfuly to personnel.\n");
 
 
 
 }
+#endif // ADD

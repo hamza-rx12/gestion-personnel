@@ -1,3 +1,6 @@
+#ifndef TOOLS
+#define TOOLS
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -91,3 +94,19 @@ int generate_ID(){
     return ID;
 
 }
+
+int check_ID(int ID){
+    login l;
+    FILE *fb=fopen("./Data/passwords.bin","rb");
+    if(fb==NULL){
+        perror("Error opening passwords.bin!");
+        exit(EXIT_FAILURE);
+    }
+    while(fread(&l, sizeof(login),1,fb)==1){
+        if(l.ID==ID) return 1;
+    }
+    fclose(fb);
+
+    return 0;
+}
+#endif // TOOLS

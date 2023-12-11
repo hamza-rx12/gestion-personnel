@@ -3,7 +3,11 @@
 #include <string.h>
 #include <unistd.h>
 //#include "variables.h"
-#include "tools.h"
+//#include "tools.h"
+#include "add.h"
+#include "delete.h"
+//#include "modify.h"
+#include "list.h"
 
 
 void design(){

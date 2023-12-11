@@ -1,3 +1,6 @@
+#ifndef VARIABLES
+#define VARIABLES
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -24,3 +27,5 @@ typedef struct {
     int ID;
     char passHash[256];
 }login;
+
+#endif // VARIABLES
