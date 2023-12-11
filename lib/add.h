@@ -54,8 +54,9 @@ void add_personnel(){
     login l;
     l.ID=p.ID;
     char p1[30], p2[30];
+    printf("Now choose a password for the new account:\n");
     while(1){
-        strcpy(p1,getpass("Personal password = "));
+        strcpy(p1,getpass("Input new password = "));
         strcpy(p2,getpass("Confirm password = "));
         if (!strcmp(p1,p2)) {
             printf("Password confirmed!\n");
