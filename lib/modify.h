@@ -21,7 +21,7 @@ void modify_personnel(int ID,int x){
         exit(EXIT_FAILURE);
     }
     while(fscanf(fp,"%d %s %s %s %d %s",&p.ID,p.name,p.surname,p.email,&p.salary,p.job)==6) {
-        if(p.ID!=ID) fprintf(ft, "\n%d %s %s %s %d %s", p.ID, p.name, p.surname, p.email, p.salary, p.job);
+        if(p.ID!=ID) fprintf(ft, "%-8d%-15s%-15s%-30s%-10d%-15s\n", p.ID, p.name, p.surname, p.email, p.salary, p.job);
     }
     fclose(fp);
     fclose(ft);
@@ -41,6 +41,10 @@ void modify_personnel(int ID,int x){
     fclose(fb);
     fclose(tb);
 
+
+}
+
+void modify_leave(int ID){
 
 }
 

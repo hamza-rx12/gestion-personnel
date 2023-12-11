@@ -67,7 +67,7 @@ void add_personnel(){
         perror("Error opening personnel.txt");
         exit(EXIT_FAILURE);
     }
-    fprintf(fp,"\n%d %s %s %s %d %s",p.ID,p.name,p.surname,p.email,p.salary,p.job);
+    fprintf(fp,"%-8d%-15s%-15s%-30s%-10d%-15s\n",p.ID,p.name,p.surname,p.email,p.salary,p.job);
     fclose(fp);
 
     // writing to passwords.bin

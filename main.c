@@ -5,9 +5,46 @@
 
 int main(){
     char *job;
-    system("clear");
-    design();
-    job=prompt();
+    ID_JOB t;
+    int level1;
+    int level2;
+    do{
+        do{
+            system("clear");
+            design();
+            t=prompt();
+            job=t.job;
+            level1=t.ID;
+//            printf("level1=%d\n"
+//                   "job=%s\n",level1,job);
+//            sleep(3);
+
+
+
+
+        }while(!level1) ;
+
+        if(!strcmp(job,"administration")){
+            system("clear");
+            design();
+            level2= administration_prompt(level1);
+        }else if(!strcmp(job,"student_affairs")){
+            system("clear");
+            design();
+            level2= student_affairs_prompt(level1);
+        }else if(!strcmp(job,"service_maintainer")){
+            system("clear");
+            design();
+            level2= service_maintainer_prompt(level1);
+        }else if(!strcmp(job,"professor")){
+            system("clear");
+            design();
+            level2= professor_prompt(level1);
+        }
+
+    }while(level2);
+
+
 
 
 

@@ -171,5 +171,15 @@ void list_passwords(){
     fclose(fp);
 }
 
+void list_leave(){
+    FILE *fp=fopen("./Data/leave_requests.txt","r");
+    if(fp==NULL){
+        perror("Error opening leave_requests.txt");
+        exit(EXIT_FAILURE);
+    }
+//    while(fscanf)
+    fclose(fp);
+}
+
 #endif // LIST
 
