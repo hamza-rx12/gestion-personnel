@@ -19,9 +19,6 @@ int main(){
 //                   "job=%s\n",level1,job);
 //            sleep(3);
 
-
-
-
         }while(!level1) ;
 
         if(!strcmp(job,"administration")){
