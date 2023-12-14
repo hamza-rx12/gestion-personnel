@@ -1,7 +1,6 @@
-235 hamza hamzaa gmail@gmail.com 1000 professor
-100 kami kaze mail 1000 student_affairs
-123 rubi kubi koooooooo 546 administration
-0 rand random hello 700 service_maintainer
-1234 rubia kubi koooooooo 546 service_maintainer
-5 now test hsgsfhf@jlfkvhsfd 7000 student_affairs
-6 nanami yuji yuujiro@chachaa 2000 administration
+235     hamza          hamzaa         gmail@gmail.com               1000      professor      
+100     kami           kaze           mail                          1000      student_affairs
+123     rubi           kubi           koooooooo                     546       administration 
+1234    rubia          kubi           koooooooo                     546       service_maintainer
+5       now            test           hsgsfhf@jlfkvhsfd             7000      student_affairs
+0       ra             rara           raaaaaaaaaaaaaa@gmail.com     7777      professor      

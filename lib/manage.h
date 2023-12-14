@@ -6,7 +6,7 @@
 //#include "tools.h"
 #include "add.h"
 #include "delete.h"
-//#include "modify.h"
+#include "modify.h"
 #include "list.h"
 
 typedef struct {
@@ -69,7 +69,7 @@ ID_JOB prompt(){
         }else{
 
             printf("Returning to main menu...\n");
-            sleep(3);
+            sleep(2);
             t.job=NULL;
             return t;
         }

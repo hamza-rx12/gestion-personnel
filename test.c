@@ -3,6 +3,7 @@
 #include <string.h>
 #include "lib/manage.h"
 //#include "lib/list.h"
+
 char *test(int x){
     if(x==0)
         return NULL;
@@ -11,6 +12,8 @@ char *test(int x){
 }
 
 int main(){
+//    add_personnel();
+    modify_personnel();
 //    getchar();
 //    char *a;
 //    int x;
@@ -20,7 +23,7 @@ int main(){
 //        a=test(x);
 //    }while(a);
 //    free(a);
-    list_passwords();
+//    list_passwords();
 //    add_personnel();
 //    login l;
 //    list_all();

@@ -27,5 +27,11 @@ typedef struct {
     int ID;
     char passHash[256];
 }login;
+typedef struct{
+    int ID;
+    int persoID;
+    int numberDays;
+    char status[10];
+}leave;
 
 #endif // VARIABLES

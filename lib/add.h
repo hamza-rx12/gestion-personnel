@@ -57,7 +57,7 @@ void add_personnel(){
             break;
         }else {
             printf("Wrong password! do it again:\n");
-            sleep(1);
+            sleep(2);
         }
     }
 
@@ -79,9 +79,10 @@ void add_personnel(){
     }
     fwrite(&l, sizeof(login),1,f);
     fclose(f);
-    printf("Added successfuly to personnel.\n");
+    printf("Added successfully to personnel.\n");
 
 
 
 }
+void add_leave_request()
 #endif // ADD

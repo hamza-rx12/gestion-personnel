@@ -37,6 +37,8 @@ void delete_personnel(int ID){
     }
     fclose(fb);
     fclose(tb);
+    remove("./Data/passwords.bin");
+    rename("./Data/temp__passwords.bin","./Data/passwords.bin");
 
 
 }
