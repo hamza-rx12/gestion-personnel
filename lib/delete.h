@@ -12,16 +12,16 @@ void delete_personnel(int ID){
 
     //deleting inside personnel.txt
     FILE *fp=fopen("./Data/personnel.txt","r");
-    FILE *ft=fopen("./Data/temp__personnel.txt","w");
-    if(fp==NULL || ft==NULL){
+    FILE *tp=fopen("./Data/temp__personnel.txt","w");
+    if(fp==NULL || tp==NULL){
         perror("Error with personnel files!");
         exit(EXIT_FAILURE);
     }
     while(fscanf(fp,"%d %s %s %s %d %s",&p.ID,p.name,p.surname,p.email,&p.salary,p.job)==6) {
-        if(p.ID!=ID) fprintf(ft, "%d %s %s %s %d %s", p.ID, p.name, p.surname, p.email, p.salary, p.job);
+        if(p.ID!=ID) fprintf(tp, "%-8d%-15s%-15s%-30s%-10d%-15s\n", p.ID, p.name, p.surname, p.email, p.salary, p.job);
     }
     fclose(fp);
-    fclose(ft);
+    fclose(tp);
     remove("./Data/personnel.txt");
     rename("./Data/temp__personnel.txt","./Data/personnel.txt");
 

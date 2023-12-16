@@ -43,7 +43,7 @@ void add_personnel(){
         case 3:
             strcpy(p.job,"administration");
             break;
-        case 4:
+        default:
             strcpy(p.job,"service_maintainer");
             break;
     }
@@ -56,8 +56,8 @@ void add_personnel(){
             printf("Password confirmed!\n");
             break;
         }else {
-            printf("Wrong password! do it again:\n");
-            sleep(2);
+            printf("Wrong password! Do it again:\n");
+            sleep(1);
         }
     }
 
@@ -72,17 +72,16 @@ void add_personnel(){
 
     // writing to passwords.bin
     strcpy(l.passHash, passHasher(p1));
-    FILE *f=fopen("./Data/passwords.bin","ab");
-    if(f==NULL){
+    FILE *fb=fopen("./Data/passwords.bin","ab");
+    if(fb==NULL){
         perror("Error opening passwords.bin");
         exit(EXIT_FAILURE);
     }
-    fwrite(&l, sizeof(login),1,f);
-    fclose(f);
+    fwrite(&l, sizeof(login),1,fb);
+    fclose(fb);
     printf("Added successfully to personnel.\n");
 
 
-
 }
-void add_leave_request()
+void add_leave_request();
 #endif // ADD

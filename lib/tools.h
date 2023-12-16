@@ -103,7 +103,10 @@ int check_ID(int ID){
         exit(EXIT_FAILURE);
     }
     while(fread(&l, sizeof(login),1,fb)==1){
-        if(l.ID==ID) return 1;
+        if(l.ID==ID) {
+            fclose(fb);
+            return 1;
+        }
     }
     fclose(fb);
 
