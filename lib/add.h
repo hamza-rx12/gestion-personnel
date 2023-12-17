@@ -83,5 +83,7 @@ void add_personnel(){
 
 
 }
-void add_leave_request();
+void add_leave_request(){
+
+}
 #endif // ADD

@@ -1,6 +1,8 @@
-235     hamza          hamzaa         gmail@gmail.com               1000      professor      
+235     hanzo          hamzaa         gmail@gmail.com               1000      service_maintainer
 100     kami           kaze           mail                          1000      student_affairs
 123     rubi           kubi           koooooooo                     546       administration 
 1234    rubia          kubi           koooooooo                     546       service_maintainer
 5       now            test           hsgsfhf@jlfkvhsfd             7000      student_affairs
 0       ra             rara           raaaaaaaaaaaaaa@gmail.com     7777      professor      
+1       naniii         sasii          jaji@jajo.com                 1111      student_affairs
+2       lala           tara           dsjhv@kakala                  498       professor      

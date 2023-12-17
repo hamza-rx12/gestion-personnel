@@ -37,6 +37,8 @@ void list_all(){
     }
     if(count==0) printf("Personnel file empty!");
     fclose(fp);
+    printf("\npress enter to return.\n");
+    getchar();
 }
 
 void list_specific(int ID){
@@ -60,6 +62,8 @@ void list_specific(int ID){
     }
     if(p.ID!=ID) printf("ID not found!\n");
     fclose(fp);
+    printf("\npress enter to return.\n");
+    getchar();
 
 }
 
@@ -85,6 +89,8 @@ void list_service_maintainer(){
     }
     if(count==0) printf("No Service maintainers found!");
     fclose(fp);
+    printf("\npress enter to return.\n");
+    getchar();
 }
 
 void list_administration(){
@@ -109,6 +115,8 @@ void list_administration(){
     }
     if(count==0) printf("No administration stuff found!");
     fclose(fp);
+    printf("\npress enter to return.\n");
+    getchar();
 
 }
 
@@ -134,7 +142,8 @@ void list_professor(){
     }
     if(count==0) printf("No professors found!");
     fclose(fp);
-
+    printf("\npress enter to return.\n");
+    getchar();
 
 }
 
@@ -160,7 +169,8 @@ void list_student_affairs(){
     }
     if(count==0) printf("No student affairs stuff found!");
     fclose(fp);
-
+    printf("\npress enter to return.\n");
+    getchar();
 }
 
 void list_passwords(){
@@ -169,6 +179,8 @@ void list_passwords(){
     while(fread(&l,sizeof(login),1,fp)==1)
         printf("%d\t%s\n",l.ID,l.passHash);
     fclose(fp);
+    printf("\npress enter to return.\n");
+    getchar();
 }
 
 void list_leave(){
@@ -179,6 +191,8 @@ void list_leave(){
     }
 //    while(fscanf)
     fclose(fp);
+    printf("\npress enter to return.\n");
+    getchar();
 }
 
 #endif // LIST

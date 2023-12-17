@@ -1,19 +1,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "lib/manage.h"
-//#include "lib/list.h"
+//#include "lib/manage.h"
+#include "lib/list.h"
 
-char *test(int x){
-    if(x==0)
-        return NULL;
-    else
-        return "hello";
-}
+//char *test(int x){
+//    if(x==0)
+//        return NULL;
+//    else
+//        return "hello";
+//}
 
 int main(){
+    list_specific(235);
+//    login l;
+//    char p1[30];
+//
+//    l.ID=235;
+//
+//    strcpy(l.passHash, passHasher(getpass("input password: ")));
+//    FILE *fb=fopen("./Data/passwords.bin","ab");
+//    if(fb==NULL){
+//        perror("Error opening passwords.bin");
+//        exit(EXIT_FAILURE);
+//    }
+//    fwrite(&l, sizeof(login),1,fb);
+//    fclose(fb);
 //    add_personnel();
-    modify_personnel();
+//    modify_personnel();
 //    getchar();
 //    char *a;
 //    int x;

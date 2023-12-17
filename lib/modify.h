@@ -21,6 +21,8 @@ void modify_personnel(int ID){
         while(1){
             int choice;
             int stop=0;
+            system("clear");
+            design();
             printf(GREEN"Choose what to modify: \n"RESET
                    "\t1.name.\n"
                    "\t2.surname.\n"
@@ -28,7 +30,7 @@ void modify_personnel(int ID){
                    "\t4.salary.\n"
                    "\t5.job.\n"
                    "\t6.password.\n"
-                   "\t7.return."
+                   "\t7.return.\n"
                    "Your choice (1-7): ");
 
             scanf("%d", &choice);
