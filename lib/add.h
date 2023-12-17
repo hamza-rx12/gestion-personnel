@@ -27,10 +27,10 @@ void add_personnel(){
            "\t2.Student Affairs.\n"
            "\t3.Administration.\n"
            "\t4.Service maintainer(service info).\n"
-           "Your choice (1-4): ");
+           GREEN"Your choice (1-4): "RESET);
     scanf("%d",&choice);
     while(choice!=1 && choice!=2 && choice!=3 && choice!=4){
-        printf("Input a valid choice (1-4): ");
+        printf(GREEN"Input a valid choice (1-4): "RESET);
         scanf("%d",&choice);
     }
     switch(choice){
@@ -48,15 +48,15 @@ void add_personnel(){
             break;
     }
     getchar();
-    printf("Now choose a password for the new account:\n");
+    printf(GREEN"Now choose a password for the new account:\n"RESET);
     while(1){
         strcpy(p1,getpass("Input password = "));
         strcpy(p2,getpass("Confirm password = "));
         if (!strcmp(p1,p2)) {
-            printf("Password confirmed!\n");
+            printf(YELLOW"Password confirmed!\n"RESET);
             break;
         }else {
-            printf("Wrong password! Do it again:\n");
+            printf(GREEN"Wrong password! Do it again:\n"RESET);
             sleep(1);
         }
     }
@@ -79,7 +79,8 @@ void add_personnel(){
     }
     fwrite(&l, sizeof(login),1,fb);
     fclose(fb);
-    printf("Added successfully to personnel.\n");
+    printf(YELLOW"Added successfully to personnel. Returning to main menu...\n"RESET);
+    sleep(2);
 
 
 }

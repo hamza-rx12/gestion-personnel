@@ -29,7 +29,7 @@ typedef struct {
 }login;
 typedef struct{
     int ID;
-    int persoID;
+    int persID;
     int numberDays;
     char status[10];
 }leave;

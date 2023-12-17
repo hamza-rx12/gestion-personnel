@@ -31,13 +31,14 @@ void modify_personnel(int ID){
                    "\t5.job.\n"
                    "\t6.password.\n"
                    "\t7.return.\n"
-                   "Your choice (1-7): ");
+                   GREEN"Your choice (1-7): "RESET);
 
             scanf("%d", &choice);
             while (choice != 1 && choice != 2 && choice != 3 && choice != 4 && choice != 5 && choice != 6 && choice != 7) {
-                printf("Input a valid choice (1-7): ");
+                printf(GREEN"Input a valid choice (1-7): "RESET);
                 scanf("%d", &choice);
             }
+            getchar();
             //modifying inside personnel.txt
             switch (choice) {
                 case 1:
@@ -70,7 +71,7 @@ void modify_personnel(int ID){
         }
 
     }else{
-        printf("ID not found!\n");
+        printf(RED"ID not found!\n"RESET);
     }
 
 }
@@ -105,7 +106,7 @@ void modify_name(int ID){
         rename("./Data/temp__personnel.txt","./Data/personnel.txt");
 
     }else{
-        printf("ID not found!\n");
+        printf(RED"ID not found!\n"RESET);
     }
 
 }
@@ -136,7 +137,7 @@ void modify_surname(int ID){
         rename("./Data/temp__personnel.txt","./Data/personnel.txt");
 
     }else{
-        printf("ID not found!\n");
+        printf(RED"ID not found!\n"RESET);
     }
 }
 void modify_email(int ID){
@@ -166,7 +167,7 @@ void modify_email(int ID){
         rename("./Data/temp__personnel.txt","./Data/personnel.txt");
 
     }else{
-        printf("ID not found!\n");
+        printf(RED"ID not found!\n"RESET);
     }
 
 }
@@ -197,7 +198,7 @@ void modify_salary(int ID){
         rename("./Data/temp__personnel.txt","./Data/personnel.txt");
 
     }else{
-        printf("ID not found!\n");
+        printf(RED"ID not found!\n"RESET);
     }
 
 }
@@ -221,10 +222,10 @@ void modify_job(int ID){
                        "\t2.Student Affairs.\n"
                        "\t3.Administration.\n"
                        "\t4.Service maintainer(service info).\n"
-                       "Your choice (1-4): ");
+                       GREEN"Your choice (1-4): "RESET);
                 scanf("%d",&choice);
                 while(choice!=1 && choice!=2 && choice!=3 && choice!=4){
-                    printf("Input a valid choice (1-4): ");
+                    printf(GREEN"Input a valid choice (1-4): "RESET);
                     scanf("%d",&choice);
                 }
                 switch(choice){
@@ -267,16 +268,16 @@ void modify_password(int ID){
         while (fread(&l, sizeof(login), 1, fb) == 1) {
             if (l.ID != ID) fwrite(&l, sizeof(login), 1, tb);
             else {
-                char p1[30];
+                char p1[256];
                 while (1) {
-                    getchar();
                     strcpy(l.passHash, passHasher(getpass("Input password = ")));
                     strcpy(p1, passHasher(getpass("Confirm password = ")));
                     if (!strcmp(p1, l.passHash)) {
-                        printf("Password confirmed!\n");
+                        printf(YELLOW"Password confirmed!\n"RESET);
+                        sleep(1);
                         break;
                     } else {
-                        printf("Wrong password! Do it again:\n");
+                        printf(YELLOW"Wrong password! Do it again:\n"RESET);
                         sleep(1);
                     }
                 }
@@ -291,7 +292,7 @@ void modify_password(int ID){
         rename("./Data/temp__passwords.bin", "./Data/passwords.bin");
 
     }else
-        printf("ID not found!\n");
+        printf(RED"ID not found!\n"RESET);
 
 }
 void modify_leave(int ID, char status[]){

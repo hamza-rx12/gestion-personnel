@@ -252,6 +252,8 @@ int service_maintainer_prompt(int ID){
                 getchar();
                 switch(x){
                     case 1:
+                        system("clear");
+                        design();
                         printf(GREEN"Choose a profession to list:\n"RESET
                                "\t1.Professor.\n"
                                "\t2.Student Affairs.\n"
@@ -263,6 +265,7 @@ int service_maintainer_prompt(int ID){
                             printf(GREEN"Input a valid choice (1-4): "RESET);
                             scanf("%d", &y);
                         }
+                        getchar();
                         switch (y) {
                             case 1:
                                 system("clear");
@@ -296,6 +299,7 @@ int service_maintainer_prompt(int ID){
                         }else
                             system("clear");
                             design();
+                            getchar();
                             list_specific(y);
                         break;
                     default:

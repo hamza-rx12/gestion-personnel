@@ -1,4 +1,4 @@
-235     hanzo          hamzaa         gmail@gmail.com               1000      service_maintainer
+235     name           surname        email@email.com               20000     service_maintainer
 100     kami           kaze           mail                          1000      student_affairs
 123     rubi           kubi           koooooooo                     546       administration 
 1234    rubia          kubi           koooooooo                     546       service_maintainer
@@ -6,3 +6,5 @@
 0       ra             rara           raaaaaaaaaaaaaa@gmail.com     7777      professor      
 1       naniii         sasii          jaji@jajo.com                 1111      student_affairs
 2       lala           tara           dsjhv@kakala                  498       professor      
+3       nabil          hilali         nabil@gmail.com               10000     administration 
+4       lala           rara           papa@papa                     2000      professor      
