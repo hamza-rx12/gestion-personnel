@@ -12,7 +12,7 @@
 typedef struct {
     int ID;
     char *job;
-}ID_JOB;
+} ID_JOB;
 
 //void design(){
 //    printf(CYAN"\n"
@@ -43,44 +43,44 @@ typedef struct {
 //
 //}
 
-ID_JOB prompt(){
+ID_JOB prompt() {
     ID_JOB t;
-    t.ID=0;
-    int choice=0;
+    t.ID = 0;
+    int choice = 0;
     printf("1.Login.\n"
            "2.Quit.\n"
            GREEN"Enter your choice(1 or2): "RESET);
-    scanf("%d",&choice);
-    while(choice!=1 && choice != 2){
+    scanf("%d", &choice);
+    while (choice != 1 && choice != 2) {
         printf(GREEN"Enter a valid choice(1 or2): "RESET);
-        scanf("%d",&choice);
+        scanf("%d", &choice);
     }
-    if(choice==1){
+    if (choice == 1) {
         login l;
         printf("ID = ");
-        scanf("%d",&l.ID);
+        scanf("%d", &l.ID);
         getchar();
-        strcpy(l.passHash,passHasher(getpass("Password = ")));
-        if(loginChecker(l)){
+        strcpy(l.passHash, passHasher(getpass("Password = ")));
+        if (loginChecker(l)) {
             printf("your poste = %s\n", IDtoJob(l.ID));
-            t.ID=l.ID;
-            t.job=IDtoJob(l.ID);
+            t.ID = l.ID;
+            t.job = IDtoJob(l.ID);
             return t;
-        }else{
+        } else {
 
             printf(YELLOW"Returning to main menu...\n"RESET);
             sleep(2);
-            t.job=NULL;
+            t.job = NULL;
             return t;
         }
-    }else exit(EXIT_SUCCESS);
+    } else exit(EXIT_SUCCESS);
 
 }
 
-int administration_prompt(int ID){
-    int choice=0;
+int administration_prompt(int ID) {
+    int choice = 0;
 
-    while(1){
+    while (1) {
         system("clear");
         design();
         printf(GREEN"STATUS:\t"MAGENTA"ADMINISTRATION\n"RESET);
@@ -91,12 +91,13 @@ int administration_prompt(int ID){
                "\t4.logout.\n"
                "\t5.Quit.\n"
                GREEN"Input your choice(1-4): "RESET);
-        scanf("%d",&choice);
-        while(choice!=1 && choice != 2 && choice != 3 && choice != 4 && choice != 5){
+        scanf("%d", &choice);
+        while (choice != 1 && choice != 2 && choice != 3 && choice != 4 && choice != 5) {
             printf(GREEN"Enter a valid choice(1-4): "RESET);
-            scanf("%d",&choice);
+            scanf("%d", &choice);
         }
-        switch(choice){
+        getchar();
+        switch (choice) {
             case 1:
                 system("clear");
                 design();
@@ -121,11 +122,11 @@ int administration_prompt(int ID){
     }
 }
 
-int student_affairs_prompt(int ID){
+int student_affairs_prompt(int ID) {
 
-    int choice=0;
+    int choice = 0;
 
-    while(1){
+    while (1) {
         system("clear");
         design();
         printf(GREEN"Status:\t"MAGENTA"STUDENT AFFAIRS\n"RESET);
@@ -136,12 +137,13 @@ int student_affairs_prompt(int ID){
                "\t4.logout.\n"
                "\t5.Quit.\n"
                GREEN"Input your choice(1-4): "RESET);
-        scanf("%d",&choice);
-        while(choice!=1 && choice != 2 && choice != 3 && choice != 4 && choice != 5){
+        scanf("%d", &choice);
+        while (choice != 1 && choice != 2 && choice != 3 && choice != 4 && choice != 5) {
             printf(GREEN"Enter a valid choice(1-4): "RESET);
-            scanf("%d",&choice);
+            scanf("%d", &choice);
         }
-        switch(choice){
+        getchar();
+        switch (choice) {
             case 1:
                 system("clear");
                 design();
@@ -167,13 +169,13 @@ int student_affairs_prompt(int ID){
 
 }
 
-int service_maintainer_prompt(int ID){
-    int choice=0;
+int service_maintainer_prompt(int ID) {
+    int choice = 0;
 
-    while(1){
+    while (1) {
         system("clear");
         design();
-        int x,y;
+        int x, y;
         printf(GREEN"Status:\t"MAGENTA"SERVICE MAINTAINER\n"RESET);
         printf(GREEN"OPTIONS:\n"RESET
                "\t1.Show my data.\n"
@@ -186,14 +188,14 @@ int service_maintainer_prompt(int ID){
                "\t8.logout.\n"
                "\t9.Quit.\n"
                GREEN"Input your choice(1-9): "RESET);
-        scanf("%d",&choice);
-        while(choice!=1 && choice != 2 && choice != 3 && choice != 4 && choice != 5
-        && choice != 6 && choice != 7 && choice != 8 && choice != 9 ){
+        scanf("%d", &choice);
+        while (choice != 1 && choice != 2 && choice != 3 && choice != 4 && choice != 5
+               && choice != 6 && choice != 7 && choice != 8 && choice != 9) {
             printf(GREEN"Enter a valid choice(1-9): "RESET);
-            scanf("%d",&choice);
+            scanf("%d", &choice);
         }
         getchar();
-        switch(choice){
+        switch (choice) {
             case 1://show sp
                 system("clear");
                 design();
@@ -218,39 +220,39 @@ int service_maintainer_prompt(int ID){
                 system("clear");
                 design();
                 printf(GREEN"Enter an account ID to delete: "RESET);
-                scanf("%d",&x);
-                if(!check_ID(x)){
+                scanf("%d", &x);
+                if (!check_ID(x)) {
                     printf(RED"ID not found!\n"RESET);
                     break;
-                }else
+                } else
                     delete_personnel(x);
                 break;
             case 6://modify personnel
                 system("clear");
                 design();
                 printf(GREEN"Enter an account ID to modify: "RESET);
-                scanf("%d",&x);
-                if(!check_ID(x)){
+                scanf("%d", &x);
+                if (!check_ID(x)) {
                     printf(RED"ID not found!\n"RESET);
                     break;
-                }else
+                } else
                     modify_personnel(x);
                 break;
             case 7://list personnel
                 system("clear");
                 design();
                 printf(GREEN"Choose listing method:\n"RESET
-                            "\t1.list by profession.\n"
-                            "\t2.list by ID.\n"
-                            "\t3.list all.\n"
-                            GREEN"Your choice (1-3): "RESET);
+                       "\t1.list by profession.\n"
+                       "\t2.list by ID.\n"
+                       "\t3.list all.\n"
+                       GREEN"Your choice (1-3): "RESET);
                 scanf("%d", &x);
-                while (x != 1 && x != 2 && x != 3 ) {
+                while (x != 1 && x != 2 && x != 3) {
                     printf(GREEN"Input a valid choice (1-3): "RESET);
                     scanf("%d", &x);
                 }
                 getchar();
-                switch(x){
+                switch (x) {
                     case 1:
                         system("clear");
                         design();
@@ -292,15 +294,15 @@ int service_maintainer_prompt(int ID){
 
                     case 2:
                         printf(GREEN"Input a account ID: "RESET);
-                        scanf("%d",&y);
-                        if(!check_ID(y)){
+                        scanf("%d", &y);
+                        if (!check_ID(y)) {
                             printf(RED"ID not found!\n"RESET);
                             break;
-                        }else
+                        } else
                             system("clear");
-                            design();
-                            getchar();
-                            list_specific(y);
+                        design();
+                        getchar();
+                        list_specific(y);
                         break;
                     default:
                         system("clear");
@@ -319,10 +321,10 @@ int service_maintainer_prompt(int ID){
     }
 }
 
-int professor_prompt(int ID){
-    int choice=0;
+int professor_prompt(int ID) {
+    int choice = 0;
 
-    while(1){
+    while (1) {
         system("clear");
         design();
         printf(GREEN"Status:\t"MAGENTA"PROFESSOR\n"RESET);
@@ -333,12 +335,13 @@ int professor_prompt(int ID){
                "\t4.logout.\n"
                "\t5.Quit.\n"
                GREEN"Input your choice(1-5): "RESET);
-        scanf("%d",&choice);
-        while(choice!=1 && choice != 2 && choice != 3 && choice != 4 && choice != 5){
+        scanf("%d", &choice);
+        while (choice != 1 && choice != 2 && choice != 3 && choice != 4 && choice != 5) {
             printf(GREEN"Enter a valid choice(1-5): "RESET);
-            scanf("%d",&choice);
+            scanf("%d", &choice);
         }
-        switch(choice){
+        getchar();
+        switch (choice) {
             case 1:
                 system("clear");
                 design();

@@ -11,8 +11,8 @@
 //        return "hello";
 //}
 
-int main(){
-    list_specific(235);
+int main() {
+//    list_specific(235);
 //    login l;
 //    char p1[30];
 //
@@ -37,7 +37,7 @@ int main(){
 //        a=test(x);
 //    }while(a);
 //    free(a);
-//    list_passwords();
+    list_passwords();
 //    add_personnel();
 //    login l;
 //    list_all();

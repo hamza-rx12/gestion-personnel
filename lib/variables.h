@@ -14,24 +14,24 @@
 #define CYAN    "\x1B[36m"
 #define WHITE   "\x1B[37m"
 
-typedef struct{
+typedef struct {
     int ID;
     char name[20];
     char surname[30];
     char email[50];
     int salary;
     char job[20];
-}personnel;
+} personnel;
 
 typedef struct {
     int ID;
     char passHash[256];
-}login;
-typedef struct{
+} login;
+typedef struct {
     int ID;
     int persID;
     int numberDays;
     char status[10];
-}leave;
+} leave;
 
 #endif // VARIABLES

@@ -7,20 +7,27 @@
 #include "tools.h"
 
 void modify_personnel(int ID);
+
 void modify_name(int ID);
+
 void modify_surname(int ID);
+
 void modify_email(int ID);
+
 void modify_salary(int ID);
+
 void modify_job(int ID);
+
 void modify_password(int ID);
-void modify_leave(int ID,char status[]);
+
+void modify_leave(int ID, char status[]);
 
 
-void modify_personnel(int ID){
-    if(check_ID(ID)){
-        while(1){
+void modify_personnel(int ID) {
+    if (check_ID(ID)) {
+        while (1) {
             int choice;
-            int stop=0;
+            int stop = 0;
             system("clear");
             design();
             printf(GREEN"Choose what to modify: \n"RESET
@@ -34,7 +41,8 @@ void modify_personnel(int ID){
                    GREEN"Your choice (1-7): "RESET);
 
             scanf("%d", &choice);
-            while (choice != 1 && choice != 2 && choice != 3 && choice != 4 && choice != 5 && choice != 6 && choice != 7) {
+            while (choice != 1 && choice != 2 && choice != 3 && choice != 4 && choice != 5 && choice != 6 &&
+                   choice != 7) {
                 printf(GREEN"Input a valid choice (1-7): "RESET);
                 scanf("%d", &choice);
             }
@@ -60,38 +68,36 @@ void modify_personnel(int ID){
                     modify_password(ID);
                     break;
                 default:
-                    stop=1;
+                    stop = 1;
                     break;
             }
-            if(stop)
+            if (stop)
                 break;
-
 
 
         }
 
-    }else{
+    } else {
         printf(RED"ID not found!\n"RESET);
     }
 
 }
 
 
-
-
-void modify_name(int ID){
+void modify_name(int ID) {
     personnel p;
-    if(check_ID(ID)){
+    if (check_ID(ID)) {
         //modifying inside personnel.txt
-        FILE *fp=fopen("./Data/personnel.txt","r");
-        FILE *ft=fopen("./Data/temp__personnel.txt","w");
-        if(fp==NULL || ft==NULL){
+        FILE *fp = fopen("./Data/personnel.txt", "r");
+        FILE *ft = fopen("./Data/temp__personnel.txt", "w");
+        if (fp == NULL || ft == NULL) {
             perror("Error with personnel files!");
             exit(EXIT_FAILURE);
         }
-        while(fscanf(fp,"%d %s %s %s %d %s",&p.ID,p.name,p.surname,p.email,&p.salary,p.job)==6) {
+        while (fscanf(fp, "%d %s %s %s %d %s", &p.ID, p.name, p.surname, p.email, &p.salary, p.job) == 6) {
 
-            if(p.ID!=ID) fprintf(ft, "%-8d%-15s%-15s%-30s%-10d%-15s\n", p.ID, p.name, p.surname, p.email, p.salary, p.job);
+            if (p.ID != ID)
+                fprintf(ft, "%-8d%-15s%-15s%-30s%-10d%-15s\n", p.ID, p.name, p.surname, p.email, p.salary, p.job);
             else {
 
                 printf(GREEN"New name = "RESET);
@@ -103,26 +109,28 @@ void modify_name(int ID){
         fclose(fp);
         fclose(ft);
         remove("./Data/personnel.txt");
-        rename("./Data/temp__personnel.txt","./Data/personnel.txt");
+        rename("./Data/temp__personnel.txt", "./Data/personnel.txt");
 
-    }else{
+    } else {
         printf(RED"ID not found!\n"RESET);
     }
 
 }
-void modify_surname(int ID){
+
+void modify_surname(int ID) {
     personnel p;
-    if(check_ID(ID)){
+    if (check_ID(ID)) {
         //modifying inside personnel.txt
-        FILE *fp=fopen("./Data/personnel.txt","r");
-        FILE *ft=fopen("./Data/temp__personnel.txt","w");
-        if(fp==NULL || ft==NULL){
+        FILE *fp = fopen("./Data/personnel.txt", "r");
+        FILE *ft = fopen("./Data/temp__personnel.txt", "w");
+        if (fp == NULL || ft == NULL) {
             perror("Error with personnel files!");
             exit(EXIT_FAILURE);
         }
-        while(fscanf(fp,"%d %s %s %s %d %s",&p.ID,p.name,p.surname,p.email,&p.salary,p.job)==6) {
+        while (fscanf(fp, "%d %s %s %s %d %s", &p.ID, p.name, p.surname, p.email, &p.salary, p.job) == 6) {
 
-            if(p.ID!=ID) fprintf(ft, "%-8d%-15s%-15s%-30s%-10d%-15s\n", p.ID, p.name, p.surname, p.email, p.salary, p.job);
+            if (p.ID != ID)
+                fprintf(ft, "%-8d%-15s%-15s%-30s%-10d%-15s\n", p.ID, p.name, p.surname, p.email, p.salary, p.job);
             else {
 
                 printf(GREEN"New surname = "RESET);
@@ -134,25 +142,27 @@ void modify_surname(int ID){
         fclose(fp);
         fclose(ft);
         remove("./Data/personnel.txt");
-        rename("./Data/temp__personnel.txt","./Data/personnel.txt");
+        rename("./Data/temp__personnel.txt", "./Data/personnel.txt");
 
-    }else{
+    } else {
         printf(RED"ID not found!\n"RESET);
     }
 }
-void modify_email(int ID){
+
+void modify_email(int ID) {
     personnel p;
-    if(check_ID(ID)){
+    if (check_ID(ID)) {
         //modifying inside personnel.txt
-        FILE *fp=fopen("./Data/personnel.txt","r");
-        FILE *ft=fopen("./Data/temp__personnel.txt","w");
-        if(fp==NULL || ft==NULL){
+        FILE *fp = fopen("./Data/personnel.txt", "r");
+        FILE *ft = fopen("./Data/temp__personnel.txt", "w");
+        if (fp == NULL || ft == NULL) {
             perror("Error with personnel files!");
             exit(EXIT_FAILURE);
         }
-        while(fscanf(fp,"%d %s %s %s %d %s",&p.ID,p.name,p.surname,p.email,&p.salary,p.job)==6) {
+        while (fscanf(fp, "%d %s %s %s %d %s", &p.ID, p.name, p.surname, p.email, &p.salary, p.job) == 6) {
 
-            if(p.ID!=ID) fprintf(ft, "%-8d%-15s%-15s%-30s%-10d%-15s\n", p.ID, p.name, p.surname, p.email, p.salary, p.job);
+            if (p.ID != ID)
+                fprintf(ft, "%-8d%-15s%-15s%-30s%-10d%-15s\n", p.ID, p.name, p.surname, p.email, p.salary, p.job);
             else {
 
                 printf(GREEN"New email = "RESET);
@@ -164,26 +174,28 @@ void modify_email(int ID){
         fclose(fp);
         fclose(ft);
         remove("./Data/personnel.txt");
-        rename("./Data/temp__personnel.txt","./Data/personnel.txt");
+        rename("./Data/temp__personnel.txt", "./Data/personnel.txt");
 
-    }else{
+    } else {
         printf(RED"ID not found!\n"RESET);
     }
 
 }
-void modify_salary(int ID){
+
+void modify_salary(int ID) {
     personnel p;
-    if(check_ID(ID)){
+    if (check_ID(ID)) {
         //modifying inside personnel.txt
-        FILE *fp=fopen("./Data/personnel.txt","r");
-        FILE *ft=fopen("./Data/temp__personnel.txt","w");
-        if(fp==NULL || ft==NULL){
+        FILE *fp = fopen("./Data/personnel.txt", "r");
+        FILE *ft = fopen("./Data/temp__personnel.txt", "w");
+        if (fp == NULL || ft == NULL) {
             perror("Error with personnel files!");
             exit(EXIT_FAILURE);
         }
-        while(fscanf(fp,"%d %s %s %s %d %s",&p.ID,p.name,p.surname,p.email,&p.salary,p.job)==6) {
+        while (fscanf(fp, "%d %s %s %s %d %s", &p.ID, p.name, p.surname, p.email, &p.salary, p.job) == 6) {
 
-            if(p.ID!=ID) fprintf(ft, "%-8d%-15s%-15s%-30s%-10d%-15s\n", p.ID, p.name, p.surname, p.email, p.salary, p.job);
+            if (p.ID != ID)
+                fprintf(ft, "%-8d%-15s%-15s%-30s%-10d%-15s\n", p.ID, p.name, p.surname, p.email, p.salary, p.job);
             else {
 
                 printf(GREEN"New salary = "RESET);
@@ -195,26 +207,28 @@ void modify_salary(int ID){
         fclose(fp);
         fclose(ft);
         remove("./Data/personnel.txt");
-        rename("./Data/temp__personnel.txt","./Data/personnel.txt");
+        rename("./Data/temp__personnel.txt", "./Data/personnel.txt");
 
-    }else{
+    } else {
         printf(RED"ID not found!\n"RESET);
     }
 
 }
-void modify_job(int ID){
+
+void modify_job(int ID) {
     personnel p;
-    if(check_ID(ID)){
+    if (check_ID(ID)) {
         //modifying inside personnel.txt
-        FILE *fp=fopen("./Data/personnel.txt","r");
-        FILE *ft=fopen("./Data/temp__personnel.txt","w");
-        if(fp==NULL || ft==NULL){
+        FILE *fp = fopen("./Data/personnel.txt", "r");
+        FILE *ft = fopen("./Data/temp__personnel.txt", "w");
+        if (fp == NULL || ft == NULL) {
             perror("Error with personnel files!");
             exit(EXIT_FAILURE);
         }
-        while(fscanf(fp,"%d %s %s %s %d %s",&p.ID,p.name,p.surname,p.email,&p.salary,p.job)==6) {
+        while (fscanf(fp, "%d %s %s %s %d %s", &p.ID, p.name, p.surname, p.email, &p.salary, p.job) == 6) {
 
-            if(p.ID!=ID) fprintf(ft, "%-8d%-15s%-15s%-30s%-10d%-15s\n", p.ID, p.name, p.surname, p.email, p.salary, p.job);
+            if (p.ID != ID)
+                fprintf(ft, "%-8d%-15s%-15s%-30s%-10d%-15s\n", p.ID, p.name, p.surname, p.email, p.salary, p.job);
             else {
                 int choice;
                 printf(GREEN"Choose new job = \n"RESET);
@@ -223,23 +237,23 @@ void modify_job(int ID){
                        "\t3.Administration.\n"
                        "\t4.Service maintainer(service info).\n"
                        GREEN"Your choice (1-4): "RESET);
-                scanf("%d",&choice);
-                while(choice!=1 && choice!=2 && choice!=3 && choice!=4){
+                scanf("%d", &choice);
+                while (choice != 1 && choice != 2 && choice != 3 && choice != 4) {
                     printf(GREEN"Input a valid choice (1-4): "RESET);
-                    scanf("%d",&choice);
+                    scanf("%d", &choice);
                 }
-                switch(choice){
+                switch (choice) {
                     case 1:
-                        strcpy(p.job,"professor");
+                        strcpy(p.job, "professor");
                         break;
                     case 2:
-                        strcpy(p.job,"student_affairs");
+                        strcpy(p.job, "student_affairs");
                         break;
                     case 3:
-                        strcpy(p.job,"administration");
+                        strcpy(p.job, "administration");
                         break;
                     case 4:
-                        strcpy(p.job,"service_maintainer");
+                        strcpy(p.job, "service_maintainer");
                         break;
                 }
                 fprintf(ft, "%-8d%-15s%-15s%-30s%-10d%-15s\n", p.ID, p.name, p.surname, p.email, p.salary, p.job);
@@ -249,16 +263,17 @@ void modify_job(int ID){
         fclose(fp);
         fclose(ft);
         remove("./Data/personnel.txt");
-        rename("./Data/temp__personnel.txt","./Data/personnel.txt");
+        rename("./Data/temp__personnel.txt", "./Data/personnel.txt");
 
-    }else{
+    } else {
         printf("ID not found!\n");
     }
 
 }
-void modify_password(int ID){
+
+void modify_password(int ID) {
     login l;
-    if(check_ID(ID)){
+    if (check_ID(ID)) {
         FILE *fb = fopen("./Data/passwords.bin", "rb");
         FILE *tb = fopen("./Data/temp__passwords.bin", "wb");
         if (fb == NULL || tb == NULL) {
@@ -291,30 +306,31 @@ void modify_password(int ID){
         remove("./Data/passwords.bin");
         rename("./Data/temp__passwords.bin", "./Data/passwords.bin");
 
-    }else
+    } else
         printf(RED"ID not found!\n"RESET);
 
 }
-void modify_leave(int ID, char status[]){
+
+void modify_leave(int ID, char status[]) {
     leave l;
-    FILE *fp=fopen("./Data/leave_requests.txt","r");
-    FILE *ft=fopen("./Data/temp__leave_requests.txt","w");
-    if(fp==NULL || ft==NULL){
+    FILE *fp = fopen("./Data/leave_requests.txt", "r");
+    FILE *ft = fopen("./Data/temp__leave_requests.txt", "w");
+    if (fp == NULL || ft == NULL) {
         perror("Error with leave files!");
         exit(EXIT_FAILURE);
     }
-    while(fscanf(fp,"%d %d %d %s",&l.ID,&l.persoID,&l.numberDays,l.status)==4) {
+    while (fscanf(fp, "%d %d %d %s", &l.ID, &l.persID, &l.numberDays, l.status) == 4) {
 
-        if(l.ID!=ID) fprintf(ft, "%-8d%-8d%-8d%-15s\n", l.ID,l.persoID,l.numberDays,l.status);
+        if (l.ID != ID) fprintf(ft, "%-8d%-8d%-8d%-15s\n", l.ID, l.persID, l.numberDays, l.status);
         else {
-            strcpy(l.status,status);
-            fprintf(ft, "%-8d%-8d%-8d%-15s\n", l.ID,l.persoID,l.numberDays,l.status);
+            strcpy(l.status, status);
+            fprintf(ft, "%-8d%-8d%-8d%-15s\n", l.ID, l.persID, l.numberDays, l.status);
         }
     }
     fclose(fp);
     fclose(ft);
     remove("./Data/leave_requests.txt");
-    rename("./Data/temp__leave_requests.txt","./Data/leave_requests.txt");
+    rename("./Data/temp__leave_requests.txt", "./Data/leave_requests.txt");
 
 }
 
