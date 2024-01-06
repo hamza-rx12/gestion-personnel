@@ -49,10 +49,10 @@ ID_JOB prompt() {
     int choice = 0;
     printf("1.Login.\n"
            "2.Quit.\n"
-           GREEN"Enter your choice(1 or2): "RESET);
+           GREEN"Enter your choice(1 or 2): "RESET);
     scanf("%d", &choice);
     while (choice != 1 && choice != 2) {
-        printf(GREEN"Enter a valid choice(1 or2): "RESET);
+        printf(GREEN"Enter a valid choice(1 or 2): "RESET);
         scanf("%d", &choice);
     }
     if (choice == 1) {
