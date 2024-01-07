@@ -34,7 +34,7 @@ void delete_personnel(int ID) {
         exit(EXIT_FAILURE);
     }
     while (fread(&l, sizeof(login), 1, fb) == 1) {
-        if (l.ID != ID) fwrite(&l, sizeof(login), 1, fb);
+        if (l.ID != ID) fwrite(&l, sizeof(login), 1, tb);
     }
     fclose(fb);
     fclose(tb);

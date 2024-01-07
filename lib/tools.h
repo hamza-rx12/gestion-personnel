@@ -90,7 +90,7 @@ char *IDtoJob(int ID) {
 
 int generate_ID() {
     login l;
-    int ID = 0;
+    int ID = 1;
     FILE *fp = fopen("./Data/passwords.bin", "rb");
     if (fp == NULL) {
         perror("Error opening passwords.bin");

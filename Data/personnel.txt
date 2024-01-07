@@ -1,3 +1,4 @@
-0       hamza          hhh            gmail@gmail.com               30000     service_maintainer
-1       test           test           gmail@mail.com                20000     service_maintainer
-2       hamzaa         hhhh           h@mail.com                    3000      professor      
+1       med            med            med@outlook.com               30000     service_maintainer
+2       prof           prof           prof@outlook.com              20000     professor      
+3       adminis        ad             administration@gmail.com      10000     administration 
+4       name           staf           staf@gmail.com                2500      student_affairs
