@@ -1,6 +1,7 @@
 # ENSAH PERSONNEL MANAGEMENT:
 
 This a small project done by Data-Engineering students from ENSAH, it serves the purpose of managing the employees of ENSAH. We have developed this project using C language.
+NOTE: Password is "hello" for all users.
 
 # REQUIREMENTS:
 
